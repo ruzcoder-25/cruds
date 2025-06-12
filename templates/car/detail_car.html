@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">name</th>
+      <th scope="col">brend</th>
+      <th scope="col">year</th>
+      <th scope="col">price</th>
+      <th scope="col">update</th>
+      <th scope="col">delete</th>
+    </tr>
+
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>{{ car.name }}</td>
+      <td>{{ car.brend }}</td>
+      <td>{{ car.year }}</td>
+      <td>{{ car.price }}</td>
+      <td><a href="{% url 'update-car' car.pk %}">update</a></td>
+      <td><a href="{% url 'delete-car' car.pk %}">delete</a></td>
+    </tr>
+
+  </tbody>
+
+</table>
+
+{% endblock %}

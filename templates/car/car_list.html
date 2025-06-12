@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<a href="{% url 'create-car' %}"> +ADD</a>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">name</th>
+      <th scope="col">brend</th>
+      <th scope="col">year</th>
+      <th scope="col">price</th>
+      <th scope="col">detail</th>
+    </tr>
+  </thead>
+    {% for c in car %}
+  <tbody>
+    <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td>{{ c.name }}</td>
+      <td>{{ c.brend }}</td>
+      <td>{{ c.year }}</td>
+      <td>{{ c.price }}</td>
+      <td><a href="{% url 'detail-car' c.pk %}"> detail </a></td>
+    </tr>
+
+  </tbody>
+    {% endfor %}
+</table>
+
+{% endblock %}

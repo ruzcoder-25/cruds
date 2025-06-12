@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+    <h3>Siz rosdan ham <strong>{{ car }}</strong> o'chirmoqchimisiz?</h3>
+    {{ form.as_p }}
+    <button > Ha </button>
+    <a href="{% url 'car-list' %}">Yoq</a>
+</form>
+
+{% endblock %}
